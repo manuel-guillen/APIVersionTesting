@@ -1,9 +1,8 @@
+using Asp.Versioning;
+
 // ==========================================================
 // Create builder and add services to the container
 // ==========================================================
-
-using Asp.Versioning;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApiVersioning(options =>
@@ -14,7 +13,6 @@ builder.Services.AddApiVersioning(options =>
 }).AddMvc();
 
 builder.Services.AddControllers();
-
 
 // ==========================================================
 // Build application and configure the HTTP request pipeline.

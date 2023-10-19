@@ -15,7 +15,6 @@ public class SongControllerV1_0 : ControllerBase
 {
 
     public IActionResult Get() => Ok(new Song() { Id = 1, SongName = "Name1.0" });
-
 }
 
 [ApiController]
@@ -24,6 +23,5 @@ public class SongControllerV1_0 : ControllerBase
 public class SongControllerV1_1 : ControllerBase
 {
 
-    public IActionResult Get() => Ok(new Song() { Id = 1, SongName = "Name1.1" });
-
+    public IActionResult Get() => Ok(new Song() { Id = 2, SongName = "Name1.1" });
 }
