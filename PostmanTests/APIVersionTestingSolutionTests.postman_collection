@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "496f7682-2cc3-4768-9fac-646b6c91615f",
+		"name": "APIVersionTestingSolution Tests",
+		"description": "HTTP requests setup to test the Web API endpoints created by the projects of the APIVersionTestingSolution\n\nTests verifying the expected result of the HTTP responses have been attached to the requests (see Tests tab)[](https://postman.postman.co/documentation/24552533-5bead607-0197-4e1d-87d4-3160bc7631c1?entity=&branch=&version=)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23987564"
+	},
+	"item": [
+		{
+			"name": "SampleNET7Service",
+			"item": [
+				{
+					"name": "Person",
+					"item": [
+						{
+							"name": "Person (no API version)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Person",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Person (API version 1.0)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate that the response is json object\r",
+											"pm.test(\"Response is a json object\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response has a Name property\r",
+											"pm.test(\"Response to have 'name' property\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('name');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Person?api-version=1.0",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Person"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "1.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Person (API version 1.1)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate that the response is json object\r",
+											"pm.test(\"Response is a json object\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response has a Name property\r",
+											"pm.test(\"Response to have 'name' property\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('name');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Person?api-version=1.1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Person"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "1.1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Robot",
+					"item": [
+						{
+							"name": "Robot (no API version)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Robot",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Robot (API version 1.0)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate that the response is json object\r",
+											"pm.test(\"Response is a json object\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response has a Name property\r",
+											"pm.test(\"Response to have 'name' property\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('name');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response's Name property is Name1.0\r",
+											"pm.test(\"Response has 'Name' property set to correct name\", function () {\r",
+											"    pm.expect(pm.response.json().name).to.eql('Name1.0');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Robot?api-version=1.0",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Robot"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "1.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Robot (API version 1.1)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate that the response is json object\r",
+											"pm.test(\"Response is a json object\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response has a Name property\r",
+											"pm.test(\"Response to have 'name' property\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('name');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response's Name property is Name1.1\r",
+											"pm.test(\"Response has 'Name' property set to correct name\", function () {\r",
+											"    pm.expect(pm.response.json().name).to.eql('Name1.1');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Robot?api-version=1.1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Robot"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "1.1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Song",
+					"item": [
+						{
+							"name": "Song (no API version)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Song",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Song"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Song (API version 1.0)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate that the response is json object\r",
+											"pm.test(\"Response is a json object\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response has a Name property\r",
+											"pm.test(\"Response to have 'songName' property\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('songName');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response's Name property is Name1.0\r",
+											"pm.test(\"Response has 'songName' property set to correct name\", function () {\r",
+											"    pm.expect(pm.response.json().songName).to.eql('Name1.0');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Song?api-version=1.0",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Song"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "1.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Song (API version 1.1)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Validate that the response code should be 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate that the response is json object\r",
+											"pm.test(\"Response is a json object\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response has a Name property\r",
+											"pm.test(\"Response to have 'songName' property\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('songName');\r",
+											"});\r",
+											"\r",
+											"// Validate that the response's Name property is Name1.1\r",
+											"pm.test(\"Response has 'songName' property set to correct name\", function () {\r",
+											"    pm.expect(pm.response.json().songName).to.eql('Name1.1');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:{{portNumber}}/Song?api-version=1.1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "{{portNumber}}",
+									"path": [
+										"Song"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "1.1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "portNumber",
+			"value": "7005"
+		}
+	]
+}
